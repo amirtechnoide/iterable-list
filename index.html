@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterable-list</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/css/uikit.min.css" />
+
+
+    <!-- CUSTOM CSS LINKS -->
+  <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+
+<div id="offcanvas-slide" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <!-- <button class="uk-offcanvas-close white-text" type="button" uk-close>Search</button> -->
+
+        <h6>Search for Names</h6>
+
+
+    </div>
+</div>
+    <div class="container">
+        <h1 class="center-align white-text">
+            List names
+        </h1>
+        <button class="uk-button uk-button-default uk-margin-small-right white-text" type="button" uk-toggle="target: #offcanvas-slide">🔎</button>
+
+        <input type="text" id="filterInput" class="text-white" placeholder="Search names...">
+        
+        <ul id="names" class="collection with-header">
+            <li class="collection-header">
+                <h5>A</h5>
+            </li>
+            <li class="collection-items">
+                <a href="#">Amir</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Andri</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Anas</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Armel</a>
+            </li>
+
+            <li class="collection-header">
+                <h5>B</h5>
+            </li>
+            <li class="collection-items">
+                <a href="#">Bertrand</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Bertis</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Bill</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Bop</a>
+            </li>
+
+            <li class="collection-header">
+                <h5>C</h5>
+            </li>
+            <li class="collection-items">
+                <a href="#">carter</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">carl</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">candidat</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">carson</a>
+            </li>
+            <li class="collection-header">
+                <h5>D</h5>
+            </li>
+            <li class="collection-items">
+                <a href="#">Dady</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Dadu</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Dangote</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Durand</a>
+            </li>
+            <li class="collection-header">
+                <h5>E</h5>
+            </li>
+            <li class="collection-items">
+                <a href="#">Elisabeth</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Elene</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Eldrige</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Eleonor</a>
+            </li>
+            <li class="collection-header">
+                <h5>F</h5>
+            </li>
+            <li class="collection-items">
+                <a href="#">Flovet</a>
+            </li>
+            <li class="collection-items">
+                <a href="#">Fadimatou</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        //get input element 
+        let filterInput = document.getElementById('filterInput');
+        //Add event listener
+        filterInput.addEventListener('keyup', filterNames);
+
+        function filterNames() {
+            //Get values of the input element
+            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+            console.log(filterValue);
+            //get Names ul
+            let ul  =document.getElementById('names')
+            //get list from ul 
+            let li = ul.querySelectorAll('.collection-items')
+            //loop throught collection items list
+            for (let i = 0; i < li.length; i++) {
+                let a = li[i].getElementsByTagName('a')[0];
+                console.log(a);
+                //if matched
+                if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+                    li[i].style.display = '';
+                }else{
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+    <!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit-icons.min.js"></script>
+
+
+
+
+</body>
+
+</html>

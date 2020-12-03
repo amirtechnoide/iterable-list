@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none !important;
+
+}
+body {
+    background-color: #076b7c;
+}
+h5{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 45px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.collection-header {
+    background-color: #f7a014 !important;
+    border: none;
+    
+}
+
+.collection-items {
+    color: #fff;
+    font-weight: 700;
+    font-size: 18;
+}
+.collection-items a {
+    color: #fff;
+    font-size:2em;
+}
+.uk-button-default{
+    font-size: 2em !important;
+}
+.uk-offcanvas-bar{
+    background-color: #f7a0148a !important;
+
+}
+input{
+    color: white;
+    font-size: 3em;
+}
